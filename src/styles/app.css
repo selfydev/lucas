@@ -1,0 +1,491 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@source "../";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+	--radius-sm: calc(var(--radius) - 4px);
+	--radius-md: calc(var(--radius) - 2px);
+	--radius-lg: var(--radius);
+	--radius-xl: calc(var(--radius) + 4px);
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--color-card: var(--card);
+	--color-card-foreground: var(--card-foreground);
+	--color-popover: var(--popover);
+	--color-popover-foreground: var(--popover-foreground);
+	--color-primary: var(--primary);
+	--color-primary-foreground: var(--primary-foreground);
+	--color-secondary: var(--secondary);
+	--color-secondary-foreground: var(--secondary-foreground);
+	--color-muted: var(--muted);
+	--color-muted-foreground: var(--muted-foreground);
+	--color-accent: var(--accent);
+	--color-accent-foreground: var(--accent-foreground);
+	--color-destructive: var(--destructive);
+	--color-border: var(--border);
+	--color-input: var(--input);
+	--color-ring: var(--ring);
+	--color-chart-1: var(--chart-1);
+	--color-chart-2: var(--chart-2);
+	--color-chart-3: var(--chart-3);
+	--color-chart-4: var(--chart-4);
+	--color-chart-5: var(--chart-5);
+	--color-sidebar: var(--sidebar);
+	--color-sidebar-foreground: var(--sidebar-foreground);
+	--color-sidebar-primary: var(--sidebar-primary);
+	--color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+	--color-sidebar-accent: var(--sidebar-accent);
+	--color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+	--color-sidebar-border: var(--sidebar-border);
+	--color-sidebar-ring: var(--sidebar-ring);
+	--color-showcase-dark: var(--showcase-dark);
+	--color-showcase-highlight: var(--showcase-highlight);
+	--color-card-light: var(--card-light);
+	--color-muted-green: var(--muted-green);
+}
+
+:root {
+	--radius: 0.625rem;
+	--background: oklch(1 0 0);
+	--foreground: oklch(0.3 0.08 158);
+	--card: oklch(1 0 0);
+	--card-foreground: oklch(0.3 0.08 158);
+	--popover: oklch(1 0 0);
+	--popover-foreground: oklch(0.3 0.08 158);
+	--primary: oklch(0.52 0.15 142);
+	--primary-foreground: oklch(1 0 0);
+	--secondary: oklch(0.97 0 0);
+	--secondary-foreground: oklch(0.3 0.08 158);
+	--muted: oklch(0.97 0 0);
+	--muted-foreground: oklch(0.556 0 0);
+	--accent: oklch(0.97 0 0);
+	--accent-foreground: oklch(0.3 0.08 158);
+	--destructive: oklch(0.577 0.245 27.325);
+	--border: oklch(0.922 0 0);
+	--input: oklch(0.922 0 0);
+	--ring: oklch(0.708 0 0);
+	--chart-1: oklch(0.646 0.222 41.116);
+	--chart-2: oklch(0.6 0.118 184.704);
+	--chart-3: oklch(0.398 0.07 227.392);
+	--chart-4: oklch(0.828 0.189 84.429);
+	--chart-5: oklch(0.769 0.188 70.08);
+	--sidebar: oklch(0.985 0 0);
+	--sidebar-foreground: oklch(0.3 0.08 158);
+	--sidebar-primary: oklch(0.52 0.15 142);
+	--sidebar-primary-foreground: oklch(1 0 0);
+	--sidebar-accent: oklch(0.97 0 0);
+	--sidebar-accent-foreground: oklch(0.3 0.08 158);
+	--sidebar-border: oklch(0.922 0 0);
+	--sidebar-ring: oklch(0.708 0 0);
+	--showcase-dark: #214734;
+	--showcase-highlight: oklch(0.95 0.18 110);
+	--card-light: oklch(0.96 0.01 140);
+	--muted-green: oklch(0.68 0.04 142);
+}
+
+.dark {
+	--background: oklch(0.145 0 0);
+	--foreground: oklch(0.985 0 0);
+	--card: oklch(0.205 0 0);
+	--card-foreground: oklch(0.985 0 0);
+	--popover: oklch(0.205 0 0);
+	--popover-foreground: oklch(0.985 0 0);
+	--primary: oklch(0.922 0 0);
+	--primary-foreground: oklch(0.205 0 0);
+	--secondary: oklch(0.269 0 0);
+	--secondary-foreground: oklch(0.985 0 0);
+	--muted: oklch(0.269 0 0);
+	--muted-foreground: oklch(0.708 0 0);
+	--accent: oklch(0.269 0 0);
+	--accent-foreground: oklch(0.985 0 0);
+	--destructive: oklch(0.704 0.191 22.216);
+	--border: oklch(1 0 0 / 10%);
+	--input: oklch(1 0 0 / 15%);
+	--ring: oklch(0.556 0 0);
+	--chart-1: oklch(0.488 0.243 264.376);
+	--chart-2: oklch(0.696 0.17 162.48);
+	--chart-3: oklch(0.769 0.188 70.08);
+	--chart-4: oklch(0.627 0.265 303.9);
+	--chart-5: oklch(0.645 0.246 16.439);
+	--sidebar: oklch(0.205 0 0);
+	--sidebar-foreground: oklch(0.985 0 0);
+	--sidebar-primary: oklch(0.488 0.243 264.376);
+	--sidebar-primary-foreground: oklch(0.985 0 0);
+	--sidebar-accent: oklch(0.269 0 0);
+	--sidebar-accent-foreground: oklch(0.985 0 0);
+	--sidebar-border: oklch(1 0 0 / 10%);
+	--sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+	* {
+		@apply border-border outline-ring/50;
+	}
+	body {
+		@apply bg-background text-foreground;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		text-rendering: optimizeLegibility;
+		/* Default background color to prevent FOUC */
+		background-color: #F8FDF5;
+	}
+}
+
+/* Geist Sans Font Declarations */
+@font-face {
+	font-family: "Geist";
+	src: url("/fonts/Geist-Regular.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Geist";
+	src: url("/fonts/Geist-Medium.woff2") format("woff2");
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Geist";
+	src: url("/fonts/Geist-SemiBold.woff2") format("woff2");
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Geist";
+	src: url("/fonts/Geist-Bold.woff2") format("woff2");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+/* Geist Mono Font Declaration */
+@font-face {
+	font-family: "Geist Mono";
+	src: url("/fonts/GeistMono-Regular.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+/* Cigars Serif Font Declarations */
+@font-face {
+	font-family: "Cigars";
+	src: url("/fonts/hw-cigars-regular.otf") format("opentype");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Cigars";
+	src: url("/fonts/hw-cigars-medium.otf") format("opentype");
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Cigars";
+	src: url("/fonts/hw-cigars-bold.otf") format("opentype");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+/* Override default fonts */
+@theme {
+	--font-sans:
+		"Geist", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+		"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	--font-serif:
+		"Cigars", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+	--font-mono:
+		"Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+		"Liberation Mono", "Courier New", monospace;
+}
+
+/* AI Input Field - Enhanced Glass Effect with Gradient Border */
+.ai-input-field {
+	position: relative;
+	background: rgba(249, 249, 249, 0.35);
+	border-radius: 21px;
+	backdrop-filter: blur(20px);
+	box-shadow:
+		0px 8px 32px rgba(0, 0, 0, 0.06),
+		0px 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.ai-input-field::before {
+	content: "";
+	position: absolute;
+	inset: -1px;
+	border-radius: 22px;
+	padding: 1px;
+	background: linear-gradient(
+		180deg,
+		rgba(253, 253, 253, 0.8) 0%,
+		rgba(237, 237, 237, 0.6) 50%,
+		rgba(255, 255, 255, 0.8) 100%
+	);
+	mask:
+		linear-gradient(black 0 0) content-box,
+		linear-gradient(black 0 0);
+	mask-composite: subtract;
+	-webkit-mask:
+		linear-gradient(black 0 0) content-box,
+		linear-gradient(black 0 0);
+	-webkit-mask-composite: source-out;
+	pointer-events: none;
+}
+
+/* Animated Gradient Circle for Microphone */
+.animated-gradient-circle {
+	background: radial-gradient(
+		circle at 30% 30%,
+		#a8f76a 0%,
+		#7ce650 40%,
+		#5fd147 80%,
+		#4cbc3d 100%
+	);
+	position: relative;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(124, 230, 80, 0.3);
+}
+
+.animated-gradient-circle::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background:
+		radial-gradient(
+			circle at 25% 25%,
+			rgba(220, 255, 220, 0.45) 0%,
+			transparent 28%
+		),
+		radial-gradient(
+			circle at 75% 25%,
+			rgba(180, 250, 180, 0.4) 0%,
+			transparent 25%
+		),
+		radial-gradient(
+			circle at 75% 75%,
+			rgba(240, 255, 240, 0.5) 0%,
+			transparent 30%
+		),
+		radial-gradient(
+			circle at 25% 75%,
+			rgba(200, 255, 200, 0.35) 0%,
+			transparent 22%
+		);
+	border-radius: 50%;
+	animation: gentleFlow 8s ease-in-out infinite;
+}
+
+.animated-gradient-circle::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background:
+		radial-gradient(
+			circle at 60% 40%,
+			rgba(230, 255, 230, 0.3) 0%,
+			transparent 20%
+		),
+		radial-gradient(
+			circle at 40% 60%,
+			rgba(200, 250, 200, 0.25) 0%,
+			transparent 18%
+		);
+	border-radius: 50%;
+	animation: gentleFlow2 6s ease-in-out infinite reverse;
+}
+
+@keyframes gentleFlow {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes gentleFlow2 {
+	0% {
+		transform: rotate(0deg) scale(1.02);
+	}
+	50% {
+		transform: rotate(180deg) scale(0.98);
+	}
+	100% {
+		transform: rotate(360deg) scale(1.02);
+	}
+}
+
+/* Typing Animation */
+@keyframes typewriter {
+	0% {
+		width: 0;
+	}
+	90% {
+		width: 100%;
+	}
+	100% {
+		width: 100%;
+	}
+}
+
+@keyframes blink {
+	0%,
+	50% {
+		border-right-color: transparent;
+	}
+	51%,
+	100% {
+		border-right-color: #245039;
+	}
+}
+
+.typing-animation {
+	overflow: hidden;
+	white-space: nowrap;
+	border-right: 2px solid #245039;
+	animation:
+		typewriter 4s steps(65) infinite,
+		blink 1s infinite;
+	max-width: 100%;
+}
+
+/* Highlight Draw Animation */
+@keyframes highlightDraw {
+	0% {
+		transform: scaleX(0);
+	}
+	to {
+		transform: scaleX(1);
+	}
+}
+
+/* Fade In Up Animation */
+@keyframes fadeInUp {
+	0% {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Hide scrollbar */
+.scrollbar-hide {
+	-ms-overflow-style: none; /* Internet Explorer 10+ */
+	scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+	display: none; /* WebKit */
+}
+
+/* Testimonials animations */
+@keyframes testimonialsScrollDown {
+	0% {
+		transform: translateY(0);
+	}
+	100% {
+		transform: translateY(-1000px); /* 5 testimonials * 200px each */
+	}
+}
+
+@keyframes testimonialsScrollUp {
+	0% {
+		transform: translateY(-1000px); /* Start from bottom */
+	}
+	100% {
+		transform: translateY(0); /* Move up to top */
+	}
+}
+
+.testimonials-scroll-down {
+	animation: testimonialsScrollDown 30s linear infinite;
+}
+
+.testimonials-scroll-up {
+	animation: testimonialsScrollUp 30s linear infinite;
+}
+
+/* Onboarding Card - Glass Effect */
+.onboarding-card {
+	background: rgba(255, 255, 255, 0.85);
+	backdrop-filter: blur(13.6px);
+	-webkit-backdrop-filter: blur(13.6px);
+	box-shadow: 0px 14px 21.1px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* HW Cigar Font Declarations */
+@font-face {
+	font-family: "HW Cigar";
+	src: url("/fonts/hw-cigar/HWCigars-Medium.woff2") format("woff2");
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "HW Cigar";
+	src: url("/fonts/hw-cigar/HWCigars-Regular.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "HW Cigar";
+	src: url("/fonts/hw-cigar/HWCigars-Bold.woff2") format("woff2");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-100%);
+	}
+}
+
+/* Fly Across Animations */
+@keyframes flyAcross {
+	0% {
+		transform: translateX(-320px);
+	}
+	100% {
+		transform: translateX(calc(100vw + 320px));
+	}
+}
+
+@keyframes flyAcrossReverse {
+	0% {
+		transform: translateX(calc(100vw + 300px));
+	}
+	100% {
+		transform: translateX(-300px);
+	}
+}
