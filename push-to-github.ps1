@@ -17,7 +17,7 @@ $tempRepo = Join-Path $tempDir "marketing-repo"
 try {
     # Clone the marketing repo to temp directory
     Write-Host "Cloning marketing repo..." -ForegroundColor Cyan
-    git clone --depth 1 --branch tanstack-router $remoteUrl $tempRepo 2>&1 | Out-Null
+    git clone --depth 1 --branch main $remoteUrl $tempRepo 2>&1 | Out-Null
     if ($LASTEXITCODE -ne 0) {
         # Branch doesn't exist, clone without branch
         git clone --depth 1 $remoteUrl $tempRepo 2>&1 | Out-Null
@@ -43,7 +43,7 @@ try {
             $commitMsg = "Update marketing site"
         }
         git commit -m $commitMsg --allow-empty 2>&1 | Out-Null
-        git push origin tanstack-router --force 2>&1 | Out-Null
+        git push origin main --force 2>&1 | Out-Null
         if ($LASTEXITCODE -eq 0) {
             Write-Host "Successfully pushed to marketing repo!" -ForegroundColor Green
         } else {
